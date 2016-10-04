@@ -18,6 +18,7 @@ gem 'turbolinks'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
+gem 'figaro'
 gem 'bcrypt'
 
 group :development, :test do

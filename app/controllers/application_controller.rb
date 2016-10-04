@@ -32,9 +32,8 @@ class ApplicationController < ActionController::Base
   private
 
   def safe_redirect(destination)
-    #uri = URI.parse(destination)
-    #(uri.scheme.nil? && uri.host.nil?) || (uri.scheme =~ /^https?$/ && uri.host =~ /\.#{known_domain}$/)
-    true
+    uri = URI.parse(destination)
+    (uri.scheme.nil? && uri.host.nil?) || (uri.scheme =~ /^https?$/ && uri.host == ENV['host'])
   rescue URI::InvalidURIError
     false
   end

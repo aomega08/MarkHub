@@ -1,0 +1,8 @@
+development:
+  host: markhub.dev
+
+test:
+  host: test.host
+
+production:
+  host: hub.yourdomain.com
