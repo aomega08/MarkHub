@@ -1,0 +1,12 @@
+h1 Sign Up
+
+= form_for @user, url: signup_path do |f|
+  = f.text_field :name, placeholder: 'Full Name', required: true
+  = @user.errors[:name].first
+  = f.email_field :email, placeholder: 'Email Address', required: true
+  = @user.errors[:email].first
+  = f.password_field :password, placeholder: 'Password', required: true
+  = @user.errors[:password].first
+  = f.password_field :password_confirmation, placeholder: 'Password confirmation', required: true
+  = @user.errors[:password_confirmation].first
+  = f.submit
