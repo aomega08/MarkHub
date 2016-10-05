@@ -1,0 +1,11 @@
+= form_tag oauth_add_facebook_pages_path
+  ul
+    - @pages.each do |page|
+      li
+        label
+          = check_box_tag 'pages[]', page['id'], {}, style: 'display: none'
+          = image_tag "https://graph.facebook.com/#{page['id']}/picture", alt: nil
+          = page['name']
+          = page['category']
+
+  = submit_tag 'Connect to MarkHub'

@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
 
   get '/dashboard', to: 'dashboard#index', as: :dashboard
+
+  namespace :oauth do
+    get 'facebook/choose', to: 'facebook#index', as: :choose_facebook_pages
+    match 'facebook/pages', via: [:get, :post], to: 'facebook#pages', as: :add_facebook_pages
+  end
 end

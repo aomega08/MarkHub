@@ -21,6 +21,8 @@ gem 'turbolinks'
 gem 'figaro'
 gem 'bcrypt'
 
+gem 'koala'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
