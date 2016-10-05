@@ -22,6 +22,7 @@ gem 'figaro'
 gem 'bcrypt'
 
 gem 'koala'
+gem 'twitter'
 
 group :development, :test do
   gem 'byebug'

@@ -1,5 +1,7 @@
 facebook_app_id: "YOUR_FACEBOOK_APP_ID"
 facebook_app_secret: "YOUR_FACEBOOK_APP_SECRET"
+twitter_consumer_key: "YOUR_TWITTER_CONSUMER_KEY"
+twitter_consumer_secret: "YOUR_TWITTER_CONSUMER_SECRET"
 
 development:
   host: markhub.dev
