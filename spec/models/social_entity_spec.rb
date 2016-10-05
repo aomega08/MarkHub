@@ -6,7 +6,9 @@ describe SocialEntity do
   end
 
   it { is_expected.to belong_to :team }
+
   it { is_expected.to validate_presence_of :network }
   it { is_expected.to validate_presence_of :network_id }
+  it { is_expected.to validate_presence_of :display_name }
   it { is_expected.to validate_presence_of :team }
 end

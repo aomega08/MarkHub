@@ -13,13 +13,14 @@
 ActiveRecord::Schema.define(version: 20161005101335) do
 
   create_table "social_entities", force: :cascade do |t|
-    t.integer  "team_id",     null: false
-    t.string   "network",     null: false
+    t.integer  "team_id",      null: false
+    t.string   "network",      null: false
     t.string   "kind"
-    t.string   "network_id",  null: false
+    t.string   "display_name", null: false
+    t.string   "network_id",   null: false
     t.text     "credentials"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["team_id", "network", "kind", "network_id"], name: "unique_entities", unique: true
   end
 

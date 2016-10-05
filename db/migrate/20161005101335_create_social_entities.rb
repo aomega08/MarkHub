@@ -4,6 +4,7 @@ class CreateSocialEntities < ActiveRecord::Migration[5.0]
       t.integer :team_id, null: false
       t.string :network, null: false
       t.string :kind
+      t.string :display_name, null: false
       t.string :network_id, null: false
       t.text :credentials
 
