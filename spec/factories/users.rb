@@ -4,5 +4,7 @@ FactoryGirl.define do
     password 'password'
     password_confirmation 'password'
     name { Faker::Name.name }
+
+    teams { [FactoryGirl.build(:team)] }
   end
 end

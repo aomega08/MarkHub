@@ -1,0 +1,4 @@
+- @teams.each do |team|
+  div
+    = team.name
+    = button_to 'Choose', choose_team_path(team.id)

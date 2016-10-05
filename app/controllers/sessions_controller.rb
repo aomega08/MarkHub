@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     authentication.signout
+    cookies.delete(:tid)
     redirect_to signin_path
   end
 end

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
 
   get '/dashboard', to: 'dashboard#index', as: :dashboard
+  resources :teams do
+    post :choose, on: :member
+  end
 
   namespace :oauth do
     get 'facebook/choose', to: 'facebook#index', as: :choose_facebook_pages
