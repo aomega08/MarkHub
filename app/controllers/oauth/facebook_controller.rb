@@ -14,7 +14,15 @@ module OAuth
 
     def pages
       @pages = get_facebook_pages(add_oauth, params[:code], session.delete(:adding_page_ids))
-      # Add selected pages to Team
+      @pages.each do |page|
+        team.social_entities.create({
+          network: 'facebook', kind: 'page',
+          display_name: page['name'], network_id: page['id'],
+          credentials: { access_token: page['access_token'] }.to_json
+        })
+      end
+
+      redirect_to dashboard_path
     end
 
     private

@@ -1,3 +1,8 @@
 = button_to 'Sign Out', signout_path, method: :delete
 
+- team.social_entities.each do |entity|
+  .network
+    strong
+      = "#{entity.network} - #{entity.display_name}"
+
 = link_to 'Add Facebook Page', oauth_choose_facebook_pages_path
