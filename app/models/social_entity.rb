@@ -3,4 +3,8 @@ class SocialEntity < ApplicationRecord
 
   validates :network, :network_id, :display_name, :team, presence: true
   validates :network_id, uniqueness: { scope: [:network, :team, :kind] }
+
+  def twitter?
+    network == 'twitter'
+  end
 end
