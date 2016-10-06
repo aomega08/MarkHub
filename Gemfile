@@ -1,10 +1,12 @@
 ruby '2.3.1'
 source 'https://rubygems.org'
 
+# Core
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma'
 gem 'sqlite3'
 
+# Template engines
 gem 'sass-rails'
 gem 'uglifier'
 gem 'sprockets'
@@ -12,15 +14,19 @@ gem 'sprockets-es6'
 gem 'jbuilder'
 gem 'slim-rails'
 
+# JS
 gem 'jquery-rails'
 gem 'turbolinks'
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+# CSS
+gem 'bourbon'
+gem 'neat'
 
+# Ruby
 gem 'figaro'
 gem 'bcrypt'
 
+# Social Network SDKs
 gem 'koala'
 gem 'twitter'
 
