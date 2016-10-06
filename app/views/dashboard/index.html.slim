@@ -3,6 +3,9 @@
 - team.social_entities.each do |entity|
   .network
     strong
-      = "#{entity.network} - #{entity.display_name}"
+      - if entity.twitter?
+        = link_to "#{entity.network} - #{entity.display_name}", twitter_path(entity.network_id)
+      - else
+        = "#{entity.network} - #{entity.display_name}"
 
 = link_to 'Add Facebook Page', oauth_choose_facebook_pages_path

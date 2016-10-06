@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     post :choose, on: :member
   end
 
+  resources :twitter, only: :show
+
   namespace :oauth do
     get 'facebook/choose', to: 'facebook#index', as: :choose_facebook_pages
     match 'facebook/pages', via: [:get, :post], to: 'facebook#pages', as: :add_facebook_pages
