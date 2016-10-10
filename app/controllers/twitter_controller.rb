@@ -1,5 +1,6 @@
 class TwitterController < ApplicationController
   def show
-    @account = team.social_entities.find_by!(network: 'twitter', network_id: params[:id])
+    entity = team.social_entities.find_by!(network: 'twitter', network_id: params[:id])
+    @account = TwitterAccount.new(entity)
   end
 end

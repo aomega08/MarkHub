@@ -7,4 +7,19 @@ class SocialEntity < ApplicationRecord
   def twitter?
     network == 'twitter'
   end
+
+  def credentials
+    JSON.parse(self[:credentials]).with_indifferent_access if self[:credentials]
+  end
+
+  def present
+    case network.to_sym
+    when :twitter
+      TwitterAccount.new(self)
+    when :facebook
+      FacebookAccount.new(self)
+    else
+      nil
+    end
+  end
 end

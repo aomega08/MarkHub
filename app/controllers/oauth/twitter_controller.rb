@@ -10,7 +10,7 @@ module OAuth
       team.social_entities.create({
         network: 'twitter', kind: 'user',
         display_name: values['screen_name'].first, network_id: values['user_id'].first,
-        credentials: { oauth_token: values['oauth_token'], oauth_secret: values['oauth_secret'] }.to_json
+        credentials: { access_token: values['oauth_token'].first, access_token_secret: values['oauth_token_secret'].first }.to_json
       })
 
       redirect_to dashboard_path
@@ -41,7 +41,7 @@ module OAuth
 
     def access_token_from_verifier(verifier)
       url = "https://api.twitter.com/oauth/access_token"
-      client.oauth_token = params[:oauth_token]
+      client.access_token = params[:oauth_token]
       auth_header = Twitter::Headers.new(client, :post, url, {}).oauth_auth_header.to_s
 
       require 'http'
