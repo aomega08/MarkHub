@@ -6,6 +6,8 @@
 @import 'brand-colors';
 @import 'font-awesome';
 
+@import 'modules/*';
+
 .fa-twitter {
   color: $twitter-blue;
 }

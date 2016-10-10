@@ -1,16 +1,10 @@
-class TwitterAccount
-  attr_reader :entity
-
-  def initialize(entity)
-    @entity = entity
-  end
-
+class TwitterAccount < SocialAccount
   def social_icon
     '<i class="fa fa-twitter"></i>'.html_safe
   end
 
-  def display_name
-    entity.display_name
+  def path
+    Rails.application.routes.url_helpers.twitter_path(entity.network_id)
   end
 
   def profile_image

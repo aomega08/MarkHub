@@ -2,13 +2,13 @@
 
 - team.social_entities.each do |entity|
   - presenter = entity.present
-  .network
-    strong
-      = presenter.social_icon
-      = image_tag presenter.profile_image
-      - if entity.twitter?
-        = link_to "#{entity.network} - #{entity.display_name}", twitter_path(entity.network_id)
-      - else
-        = "#{entity.network} - #{entity.display_name}"
+  
+  .accounts-list
+    = link_to presenter.path, class: 'accounts-list-item'
+      .accounts-list-item__image
+        = presenter.social_icon
+        = image_tag presenter.profile_image
+      
+      = entity.display_name
 
 = link_to 'Add Facebook Page', oauth_choose_facebook_pages_path
