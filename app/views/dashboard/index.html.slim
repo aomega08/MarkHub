@@ -1,8 +1,11 @@
 = button_to 'Sign Out', signout_path, method: :delete
 
 - team.social_entities.each do |entity|
+  - presenter = entity.present
   .network
     strong
+      = presenter.social_icon
+      = image_tag presenter.profile_image
       - if entity.twitter?
         = link_to "#{entity.network} - #{entity.display_name}", twitter_path(entity.network_id)
       - else
